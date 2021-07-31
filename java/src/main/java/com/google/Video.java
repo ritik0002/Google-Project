@@ -9,11 +9,13 @@ class Video {
   private final String title;
   private final String videoId;
   private final List<String> tags;
-
+  private  boolean playing;
+  private boolean pause;
   Video(String title, String videoId, List<String> tags) {
     this.title = title;
     this.videoId = videoId;
     this.tags = Collections.unmodifiableList(tags);
+    playing=false;
   }
 
   /** Returns the title of the video. */
@@ -26,6 +28,15 @@ class Video {
     return videoId;
   }
 
+  /** Returns the state of playing video */
+  Boolean getPlaying(){ return playing;}
+
+  void setPlaying(boolean play){playing=play;}
+
+
+  Boolean getPause(){ return pause;}
+
+  void setPause(boolean p){pause=p;}
   /** Returns a readonly collection of the tags of the video. */
   List<String> getTags() {
     return tags;
