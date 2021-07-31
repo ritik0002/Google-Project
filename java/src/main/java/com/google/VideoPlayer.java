@@ -13,7 +13,11 @@ public class VideoPlayer {
   }
 
   public void showAllVideos() {
-    System.out.println("showAllVideos needs implementation");
+    System.out.println("Here's a list of all available videos:");
+    for(int i=0;i<videoLibrary.getVideos().size();i++){
+        System.out.println(videoLibrary.getVideos().get(i).getTitle()+""+videoLibrary.getVideos().get(i).getVideoId()
+        +""+videoLibrary.getVideos().get(i).getTags());
+    }
   }
 
   public void playVideo(String videoId) {
